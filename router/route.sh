@@ -19,7 +19,6 @@ fi
 
 OPS=$1
 
-
 # route $OPS -net ${IP_SEGMENT} ${ROUTE_GW}
 route ${OPS} -net 0.0.0.0/7 ${ROUTE_GW}
 route ${OPS} -net 14.0.0.0/8 ${ROUTE_GW}

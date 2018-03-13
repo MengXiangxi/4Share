@@ -5403,4 +5403,4 @@ route ${OPS} -net 223.254.0.0/16 ${ROUTE_GW}
 route ${OPS} -net 223.255.0.0/17 ${ROUTE_GW}
 route ${OPS} -net 223.255.236.0/22 ${ROUTE_GW}
 route ${OPS} -net 223.255.252.0/23 ${ROUTE_GW}
-route ${OPS} -inet6 -net 2001:da8:201::/48 ${ROUTE_GW}
+route ${OPS} -A inet6 2001:da8:201::/48 ${ROUTE_GW}

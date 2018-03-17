@@ -1,17 +1,17 @@
 #!/bin/sh
 
-chmod a+rx /tmp/mnt/Router/configs/* && echo -e "\n  chmod success!\n"
-/tmp/mnt/Router/configs/route.sh delete && echo -e "\n  Delete route success!\n"
+chmod a+rx /tmp/mnt/router/configs/* && echo -e "\n  chmod success!\n"
+/tmp/mnt/router/configs/route.sh delete && echo -e "\n  Delete route success!\n"
 
-rm -f /tmp/mnt/Router/configs/route.sh && curl -o /tmp/mnt/Router/configs/route.sh \
+rm -f /tmp/mnt/router/configs/route.sh && curl -o /tmp/mnt/router/configs/route.sh \
 https://raw.githubusercontent.com/IceCodeNew/4Share/master/router/route.sh && echo -e "\n  Update route.sh success!\n"
 
-rm -f /tmp/mnt/Router/configs/accelerated-domains.china.conf && curl -o /tmp/mnt/Router/configs/accelerated-domains.china.conf \
+rm -f /tmp/mnt/router/configs/accelerated-domains.china.conf && curl -o /tmp/mnt/router/configs/accelerated-domains.china.conf \
 https://raw.githubusercontent.com/IceCodeNew/4Share/master/router/accelerated-domains.china.conf && \
 echo -e "\n  Update accelerated-domains.china.conf success!\n"
 
-chmod a+rx /tmp/mnt/Router/configs/* && echo -e "\n  chmod success!\n"
+chmod a+rx /tmp/mnt/router/configs/* && echo -e "\n  chmod success!\n"
 
-/tmp/mnt/Router/configs/route.sh add && echo -e "\n  Add route success!\n"
+/tmp/mnt/router/configs/route.sh add && echo -e "\n  Add route success!\n"
 
 service restart_dnsmasq && echo -e "\n  Restart dnsmasq success!\n"

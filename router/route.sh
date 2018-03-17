@@ -23,6 +23,7 @@ OPS=$1
 # Generate:
 # https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt
 # sed -i -e 's/^/route\ \${OPS}\ -net\ &/g' -e 's/$/&\ \${ROUTE_GW}/g' route.sh
+
 route ${OPS} -net 1.0.1.0/24 ${ROUTE_GW}
 route ${OPS} -net 1.0.2.0/23 ${ROUTE_GW}
 route ${OPS} -net 1.0.8.0/21 ${ROUTE_GW}
@@ -2659,7 +2660,6 @@ route ${OPS} -net 114.198.248.0/21 ${ROUTE_GW}
 route ${OPS} -net 114.208.0.0/12 ${ROUTE_GW}
 route ${OPS} -net 114.224.0.0/11 ${ROUTE_GW}
 route ${OPS} -net 115.24.0.0/14 ${ROUTE_GW}
-route ${OPS} -net 115.27.0.0/16 ${ROUTE_GW}
 route ${OPS} -net 115.28.0.0/15 ${ROUTE_GW}
 route ${OPS} -net 115.31.64.0/20 ${ROUTE_GW}
 route ${OPS} -net 115.32.0.0/14 ${ROUTE_GW}
@@ -3500,7 +3500,6 @@ route ${OPS} -net 161.163.180.0/22 ${ROUTE_GW}
 route ${OPS} -net 161.207.0.0/16 ${ROUTE_GW}
 route ${OPS} -net 162.14.0.0/16 ${ROUTE_GW}
 route ${OPS} -net 162.62.0.0/16 ${ROUTE_GW}
-route ${OPS} -net 162.105.0.0/16 ${ROUTE_GW}
 route ${OPS} -net 163.0.0.0/16 ${ROUTE_GW}
 route ${OPS} -net 163.47.4.0/22 ${ROUTE_GW}
 route ${OPS} -net 163.53.0.0/20 ${ROUTE_GW}
@@ -5343,8 +5342,6 @@ route ${OPS} -net 221.200.0.0/13 ${ROUTE_GW}
 route ${OPS} -net 221.208.0.0/12 ${ROUTE_GW}
 route ${OPS} -net 221.224.0.0/12 ${ROUTE_GW}
 route ${OPS} -net 222.16.0.0/12 ${ROUTE_GW}
-route ${OPS} -net 222.29.0.0/17 ${ROUTE_GW}
-route ${OPS} -net 222.29.128.0/19 ${ROUTE_GW}
 route ${OPS} -net 222.29.158.0/24 ${ROUTE_GW}
 route ${OPS} -net 222.32.0.0/11 ${ROUTE_GW}
 route ${OPS} -net 222.64.0.0/11 ${ROUTE_GW}
@@ -5403,4 +5400,19 @@ route ${OPS} -net 223.254.0.0/16 ${ROUTE_GW}
 route ${OPS} -net 223.255.0.0/17 ${ROUTE_GW}
 route ${OPS} -net 223.255.236.0/22 ${ROUTE_GW}
 route ${OPS} -net 223.255.252.0/23 ${ROUTE_GW}
+
+# https://its.pku.edu.cn/faq_2.jsp  --获得北大IP网段
+# 162.105.0.0/16
+# 202.112.7.0/24
+# 202.112.8.0/24
+# 222.29.0.0/17
+# 222.29.128.0/19
+# 115.27.0.0/16
+# 2001:da8:201::/48
+route ${OPS} -net 115.27.0.0/16 ${ROUTE_GW}
+route ${OPS} -net 162.105.0.0/16 ${ROUTE_GW}
+route ${OPS} -net 202.112.7.0/24 ${ROUTE_GW}
+route ${OPS} -net 202.112.8.0/24 ${ROUTE_GW}
+route ${OPS} -net 222.29.0.0/17 ${ROUTE_GW}
+route ${OPS} -net 222.29.128.0/19 ${ROUTE_GW}
 route ${OPS} -A inet6 2001:da8:201::/48 ${ROUTE_GW}

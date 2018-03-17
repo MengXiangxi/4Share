@@ -24,6 +24,9 @@ OPS=$1
 # https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt
 # sed -i -e 's/^/route\ \${OPS}\ -net\ &/g' -e 's/$/&\ \${ROUTE_GW}/g' china_ip_list.txt
 
+# 另一边要用到的命令：
+# sed -i 's/114.114.114.114/119.29.29.29/g' accelerated-domains.china.conf
+
 route ${OPS} -net 1.0.1.0/24 ${ROUTE_GW}
 route ${OPS} -net 1.0.2.0/23 ${ROUTE_GW}
 route ${OPS} -net 1.0.8.0/21 ${ROUTE_GW}

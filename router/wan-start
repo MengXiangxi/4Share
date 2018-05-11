@@ -1,18 +1,14 @@
-#!/bin/sh
+read -p "What can I do for you? (add/del/upd/all)\n" opr
+if [ $# -eq 0 ] || [ "$opr" == "all" ]; then
+    chrt.sh del
+    chrt.sh upd
+    chrt.sh add
+    exit
+fi
 
-chmod a+rx /tmp/mnt/router/configs/* && echo -e "\n  chmod success!\n"
-/tmp/mnt/router/configs/route.sh delete && echo -e "\n  Delete route success!\n"
+if [ $# -ne 1 ]; then
+    echo $0 add/del/upd/all
+    exit
+fi
 
-curl -o /tmp/mnt/router/configs/route.sh.new https://raw.githubusercontent.com/IceCodeNew/4Share/master/router/route.sh \
-&& mv /tmp/mnt/router/configs/route.sh.new /tmp/mnt/router/configs/route.sh -f && echo -e "\n  Update route.sh success!\n"
-
-curl -o /tmp/mnt/router/configs/accelerated-domains.china.conf.new \
-https://raw.githubusercontent.com/IceCodeNew/4Share/master/router/accelerated-domains.china.conf && \
-mv /tmp/mnt/router/configs/accelerated-domains.china.conf.new /tmp/mnt/router/configs/accelerated-domains.china.conf -f \
-&& echo -e "\n  Update accelerated-domains.china.conf success!\n"
-
-chmod a+rx /tmp/mnt/router/configs/* && echo -e "\n  chmod success!\n"
-
-/tmp/mnt/router/configs/route.sh add && echo -e "\n  Add route success!\n"
-
-service restart_dnsmasq && echo -e "\n  Restart dnsmasq success!\n"
+chrt.sh $opr

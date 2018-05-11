@@ -4,13 +4,13 @@
 ROUTE_GW="gw `nvram get wan0_gateway`"
 
 if [ $# -ne 1 ]; then
-   echo $0 add/delete
-   exit
+    echo $0 add/delete
+    exit
 fi
 
 if [ "$1" != "add" ]  && [ "$1" != "delete" ]; then
-   echo $0 add/delete
-   exit
+    echo $0 add/delete
+    exit
 fi
 
 if [ "$1" == "delete" ]; then

@@ -1,4 +1,5 @@
-read -p "What can I do for you? (add/del/upd/all) "
+read -t 5 -p "What can I do for you? (add/del/upd/all) "
+REPLY=${REPLY:-"all"}
 echo $REPLY
 if [ $# -eq 0 ] || [ "$REPLY" == "all" ]; then
     ./chrt.sh del

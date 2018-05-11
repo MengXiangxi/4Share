@@ -1,8 +1,9 @@
-read -p "What can I do for you? (add/del/upd/all)\n" opr
-if [ $# -eq 0 ] || [ "$opr" == "all" ]; then
-    chrt.sh del
-    chrt.sh upd
-    chrt.sh add
+read -p "What can I do for you? (add/del/upd/all) "
+echo $REPLY
+if [ $# -eq 0 ] || [ "$REPLY" == "all" ]; then
+    ./chrt.sh del
+    ./chrt.sh upd
+    ./chrt.sh add
     exit
 fi
 
@@ -11,4 +12,4 @@ if [ $# -ne 1 ]; then
     exit
 fi
 
-chrt.sh $opr
+chrt.sh $REPLY

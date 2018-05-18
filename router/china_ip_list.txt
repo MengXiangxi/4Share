@@ -5369,11 +5369,3 @@ route ${OPS} -net 223.254.0.0/16 ${ROUTE_GW}
 route ${OPS} -net 223.255.0.0/17 ${ROUTE_GW}
 route ${OPS} -net 223.255.236.0/22 ${ROUTE_GW}
 route ${OPS} -net 223.255.252.0/23 ${ROUTE_GW}
-
-route ${OPS} -net 115.27.0.0/16 ${ROUTE_GW}
-route ${OPS} -net 162.105.0.0/16 ${ROUTE_GW}
-route ${OPS} -net 202.112.7.0/24 ${ROUTE_GW}
-route ${OPS} -net 202.112.8.0/24 ${ROUTE_GW}
-route ${OPS} -net 222.29.0.0/17 ${ROUTE_GW}
-route ${OPS} -net 222.29.128.0/19 ${ROUTE_GW}
-route ${OPS} -A inet6 2001:da8:201::/48 ${ROUTE_GW}
